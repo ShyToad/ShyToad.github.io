@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проект</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 60%;
+            height: 100%;
+            color: #2e3c1c;
+            background-color: #f7f7f7;
+            margin: auto;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            grid-auto-flow: row dense;
+            padding: 1em;
+        }
+        .panel, .desc {
+            border: 2px solid #9a9a9a;
+            padding: 3em 2em;
+            margin: 1em;
+            box-shadow: 0 0 15px #b0c7a6;
+        }
+        .panel{
+            grid-column : span 1;
+            text-align: center;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 16px;
+        }
+        .desc {
+            grid-column : span 3;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+            font-size: 18px;
+        }
+        .title {
+            text-align: center;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+            padding-top: 1em;
+        }
+        a {
+            color: red;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+        <h1 class="title">Инициация итогового проекта</h1>
+    <div class="container">
+        <div class="panel">
+            <h1>Имя</h1>
+        </div>
+        <div class="desc">
+            <p>Бабина Александра</p>
+        </div>
+        <div class="panel">
+            <h1>Тематика сайта</h1>
+        </div>
+        <div class="desc">
+            <p>Веб-игра, основанная на мини-игре "монстр" из двадцать четвёртой части серии игр про Нэнси Дрю.</p>
+        </div>
+        <div class="panel">
+            <h1>Название</h1>
+        </div>
+        <div class="desc">
+            <p>CGoS ("Chupacabra: Game of Survival")</p>
+        </div>
+        <div class="panel">
+            <h1>Целевая аудитория</h1>
+        </div>
+        <div class="desc">
+            <p>Целевая аудитория для этой небольшой казуальной игры включает в себя широкий круг пользователей от семи лет. <br> Особенностью CGoS является простота и доступность, поэтому она будет привлекательна для тех, кто ищет легкое развлечение, возможность скоротать время и насладиться занимательным геймплеем без необходимости глубокого погружения в сложные механики игры.</p>
+        </div>
+        <div class="panel">
+            <h1>Функциональные возможности</h1>
+        </div>
+        <div class="desc">
+            <p>
+                1. Выбор имени и режима игры (быстрая, средняя, долгая). Режимы будут отличаться друг от друга масштабом карт и количеством коров (вероятно, от десяти до двадцати).
+                <br>                
+                2. Локальный рейтинг: после победы рейтинг победителя будет увеличиваться на разницу оставшихся в живых овец у обоих сторон. Место текущего игрока в рейтинге будет отображаться при открытии модального окна (меню).
+                <br>
+                3. История матчей. Каждая игра с итоговыми очками будет записываться в журнал на отдельной вкладке.
+                <br>
+                4. Возможность смены языка (rus, eng).
+                <br>
+                На концепцию игры можно взглянуть, перейдя по ссылке: <a href="https://youtu.be/Gagp0lPOxMw?si=H6hG8tu-6luPx6GJ&t=2926">youtube</a>.
+                </p>
+        </div>
+    </div>
+</body>
+</html>
