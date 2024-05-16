@@ -1,8 +1,196 @@
+:root {
+    --greyC:#677C77;
+    --darkGreen:#445F3B;
+    --lightGreen:#8EA076;
+    --lightgrey:#E0EFEA;
+    --brownC: #564734;
+}
+@font-face {
+    font-family: "Werkzeug"; 
+    src: url("../fonts/Werkzeug-0.9.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+  @font-face {
+    font-family: "VividSans"; 
+    src: url("../fonts/VividSans-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+@media (1200px <= width) {
+    .main {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        grid-auto-flow: row dense;
+        }
+        .main div {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+        }
+        .header {
+            grid-row: span 1;
+            grid-column: span 6;
+        }
+        .game {
+            grid-row: span 9;
+            grid-column: span 6;
+        }
+    .title, .menu {
+        grid-column: span 2;
+    }
+    .map, .nav {
+        grid-column: span 6;
+    }
+    .ico {
+        margin-left: 3em;
+    }
+}
+@media (960px <= width < 1200px) {
+    .main {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-auto-flow: row dense;
+        }
+        .header {
+            grid-row: span 1;
+            grid-column: span 6;
+        }
+        .game {
+            grid-row: span 5;
+        }
+    .title {
+        grid-column: span 4;
+    }
+    .nav {
+        grid-column: span 2;
+    }
+    .menu {
+        grid-column: span 2;
+        
+    }
+}
+@media (960px > width) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(24, 1fr);
+        grid-auto-flow: column dense;
+        padding: 1em;
+        }
+        .orange {
+            grid-column : span 1;
+        }
+        .blue, .purple {
+            grid-column : span 1;
+        }
+        .pink {
+            grid-column : span 1;
+        }
+        .yellow {
+            grid-column : span 1;
+            position: relative;
+            display: inline-block;
+        }
+        .green {
+            grid-column : span 1;
+        }
+        .dropbtn {
+            width: 100%;
+        }
+        .pan {
+            display: none;
+            position: absolute;
+            right: 20px;
+            background-color: var(--borderc);
+            border-radius: 10%;
+            min-width: 70%;
+            box-shadow: 0px 5px 10px rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+        .yellow:active .pan {display: block;}
+}
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family:"Werkzeug",'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 body {
-    background-color: black;
-    color: white;
+    width: 100%;
+    height: 100%;
+    color: var(--lightgrey);
+    background-color: var(--lightGreen);
 }
+.container *{
+    padding: 1em;
+}
+.main {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+}
+.header {
+    background-color: var(--lightGreen);
+}
+.title {
+    display: flex;
+    cursor:default;
+    justify-content: center;
+    user-select: none;
+    pointer-events: none;
+}
+.title h1 {
+    padding: 0;
+    align-self:center;
+    margin-top: 20px;
+    
+    color: var(--brownC);
+    text-shadow: 0 0 10px #E0EFEA;
+    font-family:"Werkzeug",'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 72px;
+}
+.ico {
+    width: 8em;
+  }
+.menu, .map{
+    border: 2px solid var(--lightgrey);
+    margin: 1em;
+}
+.menu{
+    background-color: var(--brownC);
+}
+.map {
+    background-image: url("../img/textures/grass.jpg");
+    background-size: cover;
+}
+ul{
+    grid-column: 8;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    text-align: center;
+  }
+  li {
+    list-style: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    margin-right: 2em;
+    align-content: center;
+
+    color: var(--lightgrey);
+    background-color: var(--brownC);
+    border: 2px solid var(--lightgrey);
+  }
+  li:hover {
+    background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+    background-size: 100% 100%;
+    color: var(--lightgrey);
+    animation: spring 300ms ease-out;
+    text-shadow: 0 -1px 3px var(--lightgrey);
+    font-weight: bold;
+  }
+  li:active {
+    transform: translateY(4px);
+  }
+  

@@ -1,0 +1,5 @@
+dark-green: #445F3B
+green: #8EA076
+grey: #677C77
+brown: #564734
+light-gtey: #E0EFEA
