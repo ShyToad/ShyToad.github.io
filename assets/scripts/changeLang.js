@@ -19,6 +19,10 @@ const langData = {
         "en": "New game",
         "ru": "Новая игра",
     },
+    "rules": {
+        "en": "Rules",
+        "ru": "Правила",
+    },
 };
 
 var elements = document.getElementsByClassName("chL");

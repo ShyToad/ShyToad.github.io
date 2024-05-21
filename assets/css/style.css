@@ -20,7 +20,61 @@
   } 
 
 /* Медиа */
+@media (1200px <= h)  {
+
+}
 @media (1200px <= width) {
+    .main {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        grid-auto-flow: row dense;
+        }
+        .main div {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+        }
+        .header {
+            grid-row: span 1;
+            grid-column: span 6;
+        }
+        .game {
+            grid-row: span 11;
+            grid-column: span 6;
+        }
+        .title, .menu {
+            grid-column: span 2;
+        }
+        .map, .nav {
+            grid-column: span 6;
+        }
+        .ico {
+            margin-left: 3em;
+        }
+        
+        .modal {
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(9, 1fr);
+        }
+        .modal-content {
+            grid-column-start: 3;
+            grid-column-end: span 2;
+            grid-row-start: 4;
+            grid-row-end: span 5;
+        }
+        .modal-title {
+        grid-column-start: 3;
+        grid-column-end: span 2;
+        grid-row-start: 1;
+        grid-row-end: span 3;
+        }
+        .nav ul {
+            grid-column: 7;
+        }
+        #navBtn {
+            display: none;
+        }
+}
+@media (960px <= width < 1200px) {
     .main {
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(12, 1fr);
@@ -47,69 +101,85 @@
     .ico {
         margin-left: 3em;
     }
-}
-@media (960px <= width < 1200px) {
-    .main {
+    .modal {
         grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(6, 1fr);
-        grid-auto-flow: row dense;
-        }
-        .header {
-            grid-row: span 1;
-            grid-column: span 6;
-        }
-        .game {
-            grid-row: span 5;
-        }
-    .title {
-        grid-column: span 4;
+        grid-template-rows: repeat(9, 1fr);
     }
-    .nav {
-        grid-column: span 2;
+    .modal-content {
+        grid-column-start: 3;
+        grid-column-end: span 2;
+        grid-row-start: 4;
+        grid-row-end: span 5;
     }
-    .menu {
-        grid-column: span 2;
-        
+    .modal-title {
+    grid-column-start: 3;
+    grid-column-end: span 2;
+    grid-row-start: 1;
+    grid-row-end: span 3;
+    }
+    .nav ul {
+        grid-column: 7;
+    }
+    #navBtn {
+        display: none;
     }
 }
 @media (960px > width) {
-    .container {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(24, 1fr);
-        grid-auto-flow: column dense;
-        padding: 1em;
+    .main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+        grid-auto-flow: row dense;
         }
-        .orange {
-            grid-column : span 1;
+        .main div {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
         }
-        .blue, .purple {
-            grid-column : span 1;
+        .header {
+            grid-row: span 1;
+            grid-column: span 2;
         }
-        .pink {
-            grid-column : span 1;
+        .game {
+            grid-row: span 8;
+            grid-column: span 2;
         }
-        .yellow {
-            grid-column : span 1;
-            position: relative;
-            display: inline-block;
-        }
-        .green {
-            grid-column : span 1;
-        }
-        .dropbtn {
-            width: 100%;
-        }
-        .pan {
-            display: none;
-            position: absolute;
-            right: 20px;
-            background-color: var(--borderc);
-            border-radius: 10%;
-            min-width: 70%;
-            box-shadow: 0px 5px 10px rgba(0,0,0,0.4);
-            z-index: 1;
-        }
-        .yellow:active .pan {display: block;}
+    .title, .menu {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    div .nav {
+        display: none;
+        grid-column: 2;
+    }
+    .map {
+        grid-column: span 2;
+        grid-row: span 7;
+    }
+    .ico {
+        justify-self: center;
+        margin-right: -5em;
+    }
+    .modal {
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+    }
+    .modal-content {
+        grid-column-start: 2;
+        grid-column-end: span 5;
+        grid-row-start: 2;
+        grid-row-end: span 7;
+    }
+    .modal-title {
+    grid-column-start: 2;
+    grid-column-end: span 5;
+    grid-row-start: 1;
+    grid-row-end: span 1;
+    }
+    #navBtn{
+        border: 2px solid black;
+        position: absolute;
+        right: 2vh;
+        top: 10vh;
+    }
 }
 
 /* Основное */
@@ -126,7 +196,7 @@ body {
     background-color: var(--lightGreen);
 }
 .container *{
-    padding: 0.5em;
+    padding: 0.6vh;
 }
 .main {
     width: 100%;
@@ -146,19 +216,19 @@ body {
 .title h1 {
     padding: 0;
     align-self:center;
-    margin-top: 20px;
+    margin-top: 2vh;
     
     color: var(--brownC);
     text-shadow: 0 0 10px #E0EFEA;
     font-family:"Werkzeug",'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 72px;
+    font-size: 8vh;
 }
 .ico {
-    width: 8em;
+    width: 10vh;
   }
 .menu, .map{
     border: 2px solid var(--lightgrey);
-    margin: 1em;
+    margin: 1vh;
 }
 .menu{
     background-color: var(--brownC);
@@ -168,10 +238,9 @@ body {
     background-size: cover;
 }
 .nav ul{
-    grid-column: 8;
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     margin: auto;
-    justify-content: space-between;
     text-align: center;
   }
   .nav li {
@@ -207,8 +276,6 @@ body {
 /* Модальные окна*/
 .modal {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(9, 1fr);
     position: fixed; 
     z-index: 1;
     left: 0;
@@ -219,33 +286,30 @@ body {
     background-size: cover;
   }
   .modal-content {
-    grid-column-start: 3;
-    grid-column-end: span 2;
-    grid-row-start: 4;
-    grid-row-end: span 5;
-
     background-color: var(--brownC);
     border: 20px double var(--lightgrey);
-    padding: 2em;
+    padding: 4vh;
+    overflow-y:auto;
+    scrollbar-width: 1px;
+  }
+  .modal-content::-webkit-scrollbar {
+    width: 1px;
   }
   .modal-title {
-    grid-column-start: 2;
-    grid-column-end: span 2;
-    grid-row-start: 1;
-    grid-row-end: span 3;
     justify-self: center;
     align-self: center;
     text-align: center;
-
   }
   .modal-title .ico {
     margin: 0;
+    width: auto;
+    height: 15vh;
   }
   .modal-title h1 {
     color: var(--lightgrey);
     text-shadow: 5px 10px 10px var(--brownC);
     font-family:"Werkzeug",'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 72px;
+    font-size: 10vh;
   }
   .modal-nav {
     display: flex;
@@ -257,13 +321,16 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;
-    margin-bottom: 0.5em;
-    padding: 0.5em;
+    margin-bottom: 3vh;
+    padding: 2vh;
 
     color: var(--lightgrey);
     background-color: var(--brownC);
     border: 2px solid var(--lightgrey);
     border-radius: 5%;
+  }
+  .modal-nav button:last-child li {
+    margin-bottom: -10px;
   }
   .modal-nav li:hover, .modal-nav #changeLangBtn:hover {
     background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
