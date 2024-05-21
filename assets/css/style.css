@@ -257,7 +257,7 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;
-    margin-bottom: 1.5em;
+    margin-bottom: 10%;
     padding: 1em;
 
     color: var(--lightgrey);
