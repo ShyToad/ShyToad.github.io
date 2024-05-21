@@ -208,7 +208,7 @@ body {
 .modal {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-rows: repeat(9, 1fr);
     position: fixed; 
     z-index: 1;
     left: 0;
@@ -222,7 +222,7 @@ body {
     grid-column-start: 3;
     grid-column-end: span 2;
     grid-row-start: 4;
-    grid-row-end: span 4;
+    grid-row-end: span 5;
 
     background-color: var(--brownC);
     border: 20px double var(--lightgrey);
@@ -257,8 +257,8 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;
-    margin-bottom: 10%;
-    padding: 1em;
+    margin-bottom: 1em;
+    padding: 0.5em;
 
     color: var(--lightgrey);
     background-color: var(--brownC);
