@@ -216,13 +216,13 @@ body {
     width: 100vw; 
     height: 100vh; 
     background: url(../img/textures/grass.jpg);
-    background-size: contain;
+    background-size: cover;
   }
   .modal-content {
     grid-column-start: 3;
     grid-column-end: span 2;
     grid-row-start: 4;
-    grid-row-end: span 6;
+    grid-row-end: span 5;
 
     background-color: var(--brownC);
     border: 20px double var(--lightgrey);
@@ -257,7 +257,7 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     padding: 0.5em;
 
     color: var(--lightgrey);
