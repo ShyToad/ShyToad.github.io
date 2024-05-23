@@ -13,16 +13,13 @@
     font-weight: normal; 
   } 
   @font-face {
-    font-family: "VividSans"; 
-    src: url("../fonts/VividSans-Regular.ttf") format("truetype"); 
+    font-family: "DudkaBold"; 
+    src: url("../fonts/Dudka\ Bold.ttf") format("truetype"); 
     font-style: normal; 
     font-weight: normal; 
   } 
 
 /* Медиа */
-@media (1200px <= h)  {
-
-}
 @media (1200px <= width) {
     .main {
         grid-template-columns: repeat(6, 1fr);
@@ -51,21 +48,31 @@
             margin-left: 3em;
         }
         
-        .modal {
+        .startMenu {
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(9, 1fr);
         }
-        .modal-content {
+        .startMenu-content {
             grid-column-start: 3;
             grid-column-end: span 2;
             grid-row-start: 4;
             grid-row-end: span 5;
         }
-        .modal-title {
+        .startMenu-title {
         grid-column-start: 3;
         grid-column-end: span 2;
         grid-row-start: 1;
         grid-row-end: span 3;
+        }
+        .rules, .info {
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+        }
+        .rules-content, .info-content {
+            grid-column-start: 2;
+            grid-column-end: span 4;
+            grid-row-start: 2;
+            grid-row-end: span 4;
         }
         .nav ul {
             grid-column: 7;
@@ -74,60 +81,10 @@
             display: none;
         }
 }
-@media (960px <= width < 1200px) {
-    .main {
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(12, 1fr);
-        grid-auto-flow: row dense;
-        }
-        .main div {
-            display: grid;
-            grid-template-columns: repeat(8, 1fr);
-        }
-        .header {
-            grid-row: span 1;
-            grid-column: span 6;
-        }
-        .game {
-            grid-row: span 11;
-            grid-column: span 6;
-        }
-    .title, .menu {
-        grid-column: span 2;
-    }
-    .map, .nav {
-        grid-column: span 6;
-    }
-    .ico {
-        margin-left: 3em;
-    }
-    .modal {
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(9, 1fr);
-    }
-    .modal-content {
-        grid-column-start: 3;
-        grid-column-end: span 2;
-        grid-row-start: 4;
-        grid-row-end: span 5;
-    }
-    .modal-title {
-    grid-column-start: 3;
-    grid-column-end: span 2;
-    grid-row-start: 1;
-    grid-row-end: span 3;
-    }
-    .nav ul {
-        grid-column: 7;
-    }
-    #navBtn {
-        display: none;
-    }
-}
-@media (960px > width) {
+@media (width < 1200px) {
     .main {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(9, 1fr);
+        grid-template-rows: repeat(12, 1fr);
         grid-auto-flow: row dense;
         }
         .main div {
@@ -135,51 +92,73 @@
             grid-template-columns: repeat(2, 1fr);
         }
         .header {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+        .title {
+            grid-row: span 1;
+        }
+        .nav {
             grid-row: span 1;
             grid-column: span 2;
         }
         .game {
+            grid-row: span 10;
+            grid-column: span 2;
+        }
+        .menu {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+        .map {
             grid-row: span 8;
             grid-column: span 2;
         }
-    .title, .menu {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-    div .nav {
-        display: none;
-        grid-column: 2;
-    }
-    .map {
-        grid-column: span 2;
-        grid-row: span 7;
-    }
-    .ico {
-        justify-self: center;
-        margin-right: -5em;
-    }
-    .modal {
-        grid-template-columns: repeat(7, 1fr);
-        grid-template-rows: repeat(9, 1fr);
-    }
-    .modal-content {
-        grid-column-start: 2;
-        grid-column-end: span 5;
-        grid-row-start: 2;
-        grid-row-end: span 7;
-    }
-    .modal-title {
-    grid-column-start: 2;
-    grid-column-end: span 5;
-    grid-row-start: 1;
-    grid-row-end: span 1;
-    }
-    #navBtn{
-        border: 2px solid black;
-        position: absolute;
-        right: 2vh;
-        top: 10vh;
-    }
+        
+        .startMenu {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(7, 1fr);
+        }
+        .startMenu-content {
+            grid-column-start: 1;
+            grid-column-end: span 2;
+            grid-row-start: 3;
+            grid-row-end: span 4;
+        }
+        .startMenu-title {
+        grid-column-start: 1;
+        grid-column-end: span 2;
+        grid-row-start: 1;
+        grid-row-end: span 2;
+        }
+        .rules, .info {
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+        }
+        .rules-content, .info-content {
+            grid-column-start: 2;
+            grid-column-end: span 4;
+            grid-row-start: 2;
+            grid-row-end: span 4;
+        }
+        .nav ul {
+            grid-column: 7;
+        }
+        #navBtn {
+            display: grid;
+        }
+        #navBtn{
+            border: 2px solid black;
+            position: absolute;
+            right: 2vh;
+            top: 10vh;
+            z-index: 2;
+        }
+        .title h1 {
+            padding: 0;
+            margin: 0;
+        }
+        
 }
 
 /* Основное */
@@ -195,13 +174,17 @@ body {
     color: var(--lightgrey);
     background-color: var(--lightGreen);
 }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 .container *{
     padding: 0.6vh;
 }
 .main {
     width: 100%;
     height: 100vh;
-    display: grid;
+    display: none;
 }
 .header {
     background-color: var(--lightGreen);
@@ -209,7 +192,6 @@ body {
 .title {
     display: flex;
     cursor:default;
-    justify-content: center;
     user-select: none;
     pointer-events: none;
 }
@@ -248,9 +230,10 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;
-    margin-right: 2em;
+    margin-right: 2vw;
     align-content: center;
-
+  }
+  .nav li {
     color: var(--lightgrey);
     background-color: var(--brownC);
     border: 2px solid var(--lightgrey);
@@ -266,57 +249,84 @@ body {
   .nav li:active {
     transform: translateY(4px);
   }
+  /*Кнопки*/
   button {
     background: none;
    border: none;
    color: inherit;
    font-size: inherit;
+   text-transform: inherit;
   }
+    .closeBtn {
+        position: absolute;
+        right: 21vw;
+        top: 21vh;
+    }
 
+    #infoBtn {
+        position: absolute;
+        bottom: 2vh;
+        right: 2vh;
+    }
 /* Модальные окна*/
-.modal {
-    display: grid;
+.startMenu, .rules, .info {
     position: fixed; 
-    z-index: 1;
     left: 0;
     top: 0;
     width: 100vw; 
     height: 100vh; 
+  }
+  .startMenu {
+    display: grid;
+    z-index: 1;
     background: url(../img/textures/grass.jpg);
     background-size: cover;
   }
-  .modal-content {
+  .rules, .info {
+    display: none;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.7);
+    word-wrap:break-word;
+  }
+  .startMenu-content, .rules-content, .info-content {
     background-color: var(--brownC);
     border: 20px double var(--lightgrey);
     padding: 4vh;
     overflow-y:auto;
     scrollbar-width: 1px;
+    user-select: none;
   }
-  .modal-content::-webkit-scrollbar {
+  .rules-content p {
+    font-family: "DudkaBold";
+    font-size: 2.3vh;
+  }
+  .startMenu-content::-webkit-scrollbar, .rules-content::-webkit-scrollbar {
     width: 1px;
   }
-  .modal-title {
+  .startMenu-title {
     justify-self: center;
     align-self: center;
     text-align: center;
+    user-select: none;
+    pointer-events: none;
   }
-  .modal-title .ico {
+  .startMenu-title .ico {
     margin: 0;
     width: auto;
     height: 15vh;
   }
-  .modal-title h1 {
+  .startMenu-title h1 {
     color: var(--lightgrey);
     text-shadow: 5px 10px 10px var(--brownC);
     font-family:"Werkzeug",'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 10vh;
   }
-  .modal-nav {
+  .startMenu-nav {
     display: flex;
     flex-direction: column;
     text-align: center;
   }
-  .modal-nav li {
+  .startMenu-nav li {
     list-style: none;
     text-transform: uppercase;
     cursor: pointer;
@@ -329,10 +339,10 @@ body {
     border: 2px solid var(--lightgrey);
     border-radius: 5%;
   }
-  .modal-nav button:last-child li {
+  .startMenu-nav button:last-child li {
     margin-bottom: -10px;
   }
-  .modal-nav li:hover, .modal-nav #changeLangBtn:hover {
+  .startMenu-nav li:hover, .startMenu-nav #changeLangBtn:hover, #infoBtn:hover {
     background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
     background-size: 100% 100%;
     color: var(--lightgrey);
@@ -340,6 +350,15 @@ body {
     text-shadow: 0 -1px 3px var(--lightgrey);
     font-weight: bold;
   }
-  .modal-nav li:active, .modal-nav #changeLangBtn:active {
+  .startMenu-nav li:active, .startMenu-nav #changeLangBtn:active, #infoBtn:active {
     transform: translateY(4px);
   }
+  .info-content *:not(.closeBtn), .rules-content *:not(.closeBtn){
+    padding: 1%;
+  }
+  .info li {
+list-style: none;
+  }
+.info ul img {
+    width: 4vh;
+}

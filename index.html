@@ -9,8 +9,8 @@
     
     <title>CGoS</title>
 
-    <script src="assets/scripts/script.js" defer></script>
-    <script src="assets/scripts/changeLang.js" defer></script>
+    <script src="./assets/scripts/script.js" defer></script>
+    <script src="./assets/scripts/changeLang.js" defer></script>
 </head>
 <body>
     <div class="startMenu" id="startMenu">
@@ -18,18 +18,41 @@
             <img src="assets/img/ico/ico.png" class="ico" alt="">
             <h1>CGoS</h1>
         </div>
-        <div class="modal-content">
-            <ul class="modal-nav">
+        <div class="startMenu-content">
+            <ul class="startMenu-nav">
                 <button id="newGame"><li class="chL" data-key="start">Новая игра</li></button>
                 <li class="chL" data-key="lvl">Сложность</li>
                 <li class="chL" data-key="history">История</li>
                 <li class="chL" data-key="rating">Рейтинг</li>
-                <li class="chL" data-key="rules">Правила</li>
+                <button id="rulBtn"><li class="chL" data-key="rules">Правила</li></button>
                 <button id="changeLangBtn" value="ru"><li  class="chL"  data-key="lang">Смена языка</li></button>
             </ul>
+
+            <button id="infoBtn"><img src="./assets/img/ico/info.png" width="30" alt=""></button>
+            <div class="info" id="info">
+                <div class="info-content">
+                    <button id="closeInfoBtn" class="closeBtn"><img src="./assets/img/ico/close.png" width="30" alt=""></button>
+                    <h3>Контент</h3>
+                    <h4>Иконки</h4>
+                    <ul>
+                        <li><a href="https://www.flaticon.com/ru/free-icons/" title="овца иконки"><img src="./assets/img/ico/ico.png" alt=""> от Freepik - Flaticon</a></li>
+                        <li><a target="_blank" href="https://icons8.com/icon/Y6cs81XXPND6/close"><img src="./assets/img/ico/close.png" alt=""></a>иконка от <a target="_blank" href="https://icons8.com">Icons8</a></li>
+                        <li><a target="_blank" href="https://icons8.com/icon/P7N90lIvNYPd/info"><img src="./assets/img/ico/info.png" alt=""></a>иконка от <a target="_blank" href="https://icons8.com">Icons8</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
       </div>
-    <div class="main">
+      <div class="rules" id="rules">
+        <div class="rules-content">
+            <button id="closeRulBtn" class="closeBtn"><img src="./assets/img/ico/close.png" width="30" alt=""></button>
+            <h1 data-key="rules" class="chL">Правила</h1>
+            <p data-key="rulesTxt" class="chL">
+                Игра состоит из двух раундов: сначала в качестве стаи чупакабр, затем в качестве пастуха. Побеждает игрок, у которого в живых осталось больше овец.<br><br> 1. Раунд чупакабр:<br> - Выберите три фишки чупакабр (их идентичность скрыта от противника).<br> - Выберите овцу, которую хотите убить, и объявите свой выбор. Выбранная овца погибает.<br> - Все фишки, находящиеся рядом с убитой овцой, подсвечиваются и должны быть передвинуты на свободные клетки. Нельзя выбирать место для чупакабр среди убитых овец, так как они не подсвечиваются.<br><br>2. Раунд пастуха:<br> - Вам показывается, какая овца была убита.<br>- Вам нужно угадать, какая из ваших овец была скрытой чупакаброй.<br>- Если вы угадываете правильно, чупакабра убегает. Если нет, ваша овца погибает.<br> - Раунд завершается, когда все чупакабры покинули поле или когда все овцы убиты.<br><br>Удачи в игре!
+            </p>
+        </div>
+      </div>
+    <div class="main" id="main">
     <div class="container header">
         <div class="title">
             <img src="assets/img/ico/ico.png" class="ico" alt="">
@@ -41,8 +64,8 @@
                 <li class="chL" data-key="lvl">Сложность</li>
                 <li class="chL" data-key="history">История</li>
                 <li class="chL" data-key="rating">Рейтинг</li>
-                <li class="chL" data-key="rules">Правила</li>
-                <li><button id="changeLangBtn2" value="ru"><img src="./assets/img/ico/ru.png" alt="RU" id="icoL" style="width: 1.5em; margin:0; padding: 0;"></button></li>
+                <button id="rulBtn2"><li class="chL" data-key="rules">Правила</li></button>
+                <button id="changeLangBtn2" value="ru"><li><img src="./assets/img/ico/ru.png" alt="RU" id="icoL" style="width: 1.5em; margin:0; padding: 0;"></li></button>
             </ul>
         </div>
     </div>
