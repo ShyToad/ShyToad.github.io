@@ -5,23 +5,15 @@
 const newGameBtn = document.getElementById('newGame');
 const startMenu = document.getElementById('startMenu');
 const main = document.getElementById('main');
+const menuBtn = document.getElementById('menuBtn');
 
 newGameBtn.onclick = function() {
     startMenu.style.display = "none";
     main.style.display = "grid";
 }
-
-//Menu (w < 960)
-const navBtn = document.getElementById('navBtn');
-const navv = document.getElementById('navv');
-navBtn.onclick = function() {
-    if(navBtn.value == "cl") {
-        navBtn.value = "open";
-        navv.style.display = "grid";
-    } else {
-        navBtn.value = "cl";
-        navv.style.display = "none";
-    }
+menuBtn.onclick = function() {
+    startMenu.style.display = "grid";
+    main.style.display = "none";
 }
 
 const rulBtn = document.getElementById('rulBtn');

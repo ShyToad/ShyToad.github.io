@@ -18,17 +18,17 @@
             <img src="assets/img/ico/ico.png" class="ico" alt="">
             <h1>CGoS</h1>
         </div>
-        <div class="startMenu-content">
+        <button id="infoBtn"><img src="./assets/img/ico/info.png" width="30" alt=""></button>
+        <button id="changeLangBtn" value="ru"><img src="./assets/img/ico/ru.png" alt="RU" id="icoL" width="30"></button>
+        <div class="startMenu-content" id="startMenuContent">
             <ul class="startMenu-nav">
                 <button id="newGame"><li class="chL" data-key="start">Новая игра</li></button>
                 <li class="chL" data-key="lvl">Сложность</li>
                 <li class="chL" data-key="history">История</li>
                 <li class="chL" data-key="rating">Рейтинг</li>
                 <button id="rulBtn"><li class="chL" data-key="rules">Правила</li></button>
-                <button id="changeLangBtn" value="ru"><li  class="chL"  data-key="lang">Смена языка</li></button>
             </ul>
-
-            <button id="infoBtn"><img src="./assets/img/ico/info.png" width="30" alt=""></button>
+            
             <div class="info" id="info">
                 <div class="info-content">
                     <button id="closeInfoBtn" class="closeBtn"><img src="./assets/img/ico/close.png" width="30" alt=""></button>
@@ -38,6 +38,7 @@
                         <li><a href="https://www.flaticon.com/ru/free-icons/" title="овца иконки"><img src="./assets/img/ico/ico.png" alt=""> от Freepik - Flaticon</a></li>
                         <li><a target="_blank" href="https://icons8.com/icon/Y6cs81XXPND6/close"><img src="./assets/img/ico/close.png" alt=""></a>иконка от <a target="_blank" href="https://icons8.com">Icons8</a></li>
                         <li><a target="_blank" href="https://icons8.com/icon/P7N90lIvNYPd/info"><img src="./assets/img/ico/info.png" alt=""></a>иконка от <a target="_blank" href="https://icons8.com">Icons8</a></li>
+                        <li><a target="_blank" href="https://icons8.com/icon/103125/down"><img src="./assets/img/ico/down.png" alt=""></a> иконка от <a target="_blank" href="https://icons8.com">Icons8</a></li>
                     </ul>
                 </div>
             </div>
@@ -53,25 +54,16 @@
         </div>
       </div>
     <div class="main" id="main">
-    <div class="container header">
-        <div class="title">
-            <img src="assets/img/ico/ico.png" class="ico" alt="">
-            <h1>CGoS</h1>
-        </div>
-        <button id="navBtn" value="cl"> abra </button>
-        <div id="navv"  class="nav">
-            <ul>
-                <li class="chL" data-key="lvl">Сложность</li>
-                <li class="chL" data-key="history">История</li>
-                <li class="chL" data-key="rating">Рейтинг</li>
-                <button id="rulBtn2"><li class="chL" data-key="rules">Правила</li></button>
-                <button id="changeLangBtn2" value="ru"><li><img src="./assets/img/ico/ru.png" alt="RU" id="icoL" style="width: 1.5em; margin:0; padding: 0;"></li></button>
-            </ul>
-        </div>
-    </div>
     <div class="container game">
         <div class="menu">
-
+            <div id="navv"  class="nav">
+                <ul>
+                    <button id="menuBtn"><li class="chL" data-key="menu">Меню</li></button>
+                    <li class="chL" data-key="history">История</li>
+                    <li class="chL" data-key="rating">Рейтинг</li>
+                    <button id="rulBtn2"><li class="chL" data-key="rules">Правила</li></button>
+                </ul>
+            </div>
         </div>
         <div class="map">
 

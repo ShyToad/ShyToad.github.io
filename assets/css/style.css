@@ -5,6 +5,7 @@
     --lightgrey:#E0EFEA;
     --brownC: #564734;
 }
+
 /* Шрифты */
 @font-face {
     font-family: "Werkzeug"; 
@@ -12,7 +13,7 @@
     font-style: normal; 
     font-weight: normal; 
   } 
-  @font-face {
+@font-face {
     font-family: "DudkaBold"; 
     src: url("../fonts/Dudka\ Bold.ttf") format("truetype"); 
     font-style: normal; 
@@ -30,24 +31,26 @@
             display: grid;
             grid-template-columns: repeat(8, 1fr);
         }
-        .header {
-            grid-row: span 1;
-            grid-column: span 6;
-        }
         .game {
-            grid-row: span 11;
-            grid-column: span 6;
+            grid-column-start: 1;
+            grid-column-end: span 6;
+            grid-row-start: 1;
+            grid-row-end: span 12;
         }
-        .title, .menu {
+        .menu {
             grid-column: span 2;
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(6, 1fr);
         }
-        .map, .nav {
+        .map {
             grid-column: span 6;
         }
-        .ico {
-            margin-left: 3em;
+        .nav {
+          grid-column-start: 1;
+            grid-column-end: span 2;
+            grid-row-start: 7;
+            grid-row-end: span 1;
         }
-        
         .startMenu {
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(9, 1fr);
@@ -186,34 +189,14 @@ a {
     height: 100vh;
     display: none;
 }
-.header {
-    background-color: var(--lightGreen);
-}
-.title {
-    display: flex;
-    cursor:default;
-    user-select: none;
-    pointer-events: none;
-}
-.title h1 {
-    padding: 0;
-    align-self:center;
-    margin-top: 2vh;
-    
-    color: var(--brownC);
-    text-shadow: 0 0 10px #E0EFEA;
-    font-family:"Werkzeug",'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 8vh;
-}
-.ico {
-    width: 10vh;
-  }
-.menu, .map{
+.menu {
     border: 2px solid var(--lightgrey);
-    margin: 1vh;
 }
 .menu{
+    display: grid;
+
     background-color: var(--brownC);
+    border: 20px double var(--lightgrey);
 }
 .map {
     background-image: url("../img/textures/grass.jpg");
@@ -222,25 +205,20 @@ a {
 .nav ul{
     display: grid;
     grid-auto-flow: column;
-    margin: auto;
     text-align: center;
+    border-top: 2px solid white;
   }
   .nav li {
     list-style: none;
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;
-    margin-right: 2vw;
     align-content: center;
-  }
-  .nav li {
+    
     color: var(--lightgrey);
     background-color: var(--brownC);
-    border: 2px solid var(--lightgrey);
   }
   .nav li:hover {
-    background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
-    background-size: 100% 100%;
     color: var(--lightgrey);
     animation: spring 300ms ease-out;
     text-shadow: 0 -1px 3px var(--lightgrey);
@@ -268,6 +246,12 @@ a {
         bottom: 2vh;
         right: 2vh;
     }
+    #changeLangBtn {
+      position: absolute;
+      right: 4vw;
+      bottom: 2vh;
+    }
+
 /* Модальные окна*/
 .startMenu, .rules, .info {
     position: fixed; 
@@ -295,6 +279,9 @@ a {
     overflow-y:auto;
     scrollbar-width: 1px;
     user-select: none;
+  }
+  .startMenu-content {
+    position: relative;
   }
   .rules-content p {
     font-family: "DudkaBold";
