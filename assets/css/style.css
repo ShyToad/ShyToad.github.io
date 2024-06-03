@@ -27,9 +27,9 @@
         grid-template-rows: repeat(12, 1fr);
         grid-auto-flow: row dense;
         }
-        .main div {
+        .main .container {
             display: grid;
-            grid-template-columns: repeat(8, 1fr);
+            grid-template-columns: repeat(12, 1fr);
         }
         .game {
             grid-column-start: 1;
@@ -38,16 +38,16 @@
             grid-row-end: span 12;
         }
         .menu {
-            grid-column: span 2;
+            grid-column: span 3;
             grid-template-columns: repeat(1, 1fr);
-            grid-template-rows: repeat(6, 1fr);
+            grid-template-rows: repeat(1, 1fr);
         }
         .map {
-            grid-column: span 6;
+            grid-column: span 9;
         }
         .nav {
-          grid-column-start: 1;
-            grid-column-end: span 2;
+            grid-column-start: 1;
+            grid-column-end: span 8;
             grid-row-start: 7;
             grid-row-end: span 1;
         }
@@ -76,9 +76,6 @@
             grid-column-end: span 4;
             grid-row-start: 2;
             grid-row-end: span 4;
-        }
-        .nav ul {
-            grid-column: 7;
         }
         #navBtn {
             display: none;
@@ -196,16 +193,16 @@ a {
     display: grid;
 
     background-color: var(--brownC);
-    border: 20px double var(--lightgrey);
+    border: 15px double var(--lightgrey);
 }
 .map {
     background-image: url("../img/textures/grass.jpg");
     background-size: cover;
 }
 .nav ul{
-    display: grid;
-    grid-auto-flow: column;
-    text-align: center;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
     border-top: 2px solid white;
   }
   .nav li {
