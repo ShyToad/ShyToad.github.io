@@ -29,7 +29,7 @@
         }
         .main .container {
             display: grid;
-            grid-template-columns: repeat(12, 1fr);
+            grid-template-columns: repeat(10, 1fr);
         }
         .game {
             grid-column-start: 1;
@@ -38,9 +38,8 @@
             grid-row-end: span 12;
         }
         .menu {
-            grid-column: span 3;
-            grid-template-columns: repeat(1, 1fr);
-            grid-template-rows: repeat(1, 1fr);
+            grid-column: span 1;
+            grid-auto-flow: column;
         }
         .map {
             grid-column: span 9;
@@ -50,6 +49,11 @@
             grid-column-end: span 8;
             grid-row-start: 7;
             grid-row-end: span 1;
+            justify-self: center;
+        }
+        .nav ul {
+          border-top: 2px solid white;
+          font-size: 1.5vh;
         }
         .startMenu {
             grid-template-columns: repeat(6, 1fr);
@@ -91,30 +95,29 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
-        .header {
-            grid-row: span 2;
+        .game {
+            grid-row: span 12;
             grid-column: span 2;
         }
-        .title {
+        .menu {
             grid-row: span 1;
+            grid-column: span 2;
+        }
+        .map {
+            grid-row: span 11;
+            grid-column: span 2;
         }
         .nav {
             grid-row: span 1;
             grid-column: span 2;
+        }        
+        .nav {
+          justify-self: end;
         }
-        .game {
-            grid-row: span 10;
-            grid-column: span 2;
+        .nav ul{
+          border-top: none;
+          border-left: 2px solid white;
         }
-        .menu {
-            grid-row: span 2;
-            grid-column: span 2;
-        }
-        .map {
-            grid-row: span 8;
-            grid-column: span 2;
-        }
-        
         .startMenu {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(7, 1fr);
@@ -154,6 +157,9 @@
             top: 10vh;
             z-index: 2;
         }
+        #changeLangBtn {
+          margin-right: 5vw;
+        }
         .title h1 {
             padding: 0;
             margin: 0;
@@ -186,14 +192,14 @@ a {
     height: 100vh;
     display: none;
 }
-.menu {
-    border: 2px solid var(--lightgrey);
-}
 .menu{
     display: grid;
+    z-index: 1;
 
     background-color: var(--brownC);
     border: 15px double var(--lightgrey);
+    box-shadow: 0.5vw 0 15px rgba(0, 0, 0, 0.7);
+    padding: 1vw;
 }
 .map {
     background-image: url("../img/textures/grass.jpg");
@@ -203,7 +209,6 @@ a {
     display: flex;
     flex-direction:row;
     flex-wrap:wrap;
-    border-top: 2px solid white;
   }
   .nav li {
     list-style: none;
@@ -213,7 +218,6 @@ a {
     align-content: center;
     
     color: var(--lightgrey);
-    background-color: var(--brownC);
   }
   .nav li:hover {
     color: var(--lightgrey);
@@ -223,6 +227,38 @@ a {
   }
   .nav li:active {
     transform: translateY(4px);
+  }
+  .chupCnt ul{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+
+    border-bottom: 2px solid var(--lightgrey);
+  }
+  .chupCnt ul li {
+    list-style: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    align-content: center;
+
+    background-color: var(--lightgrey);    
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    border-radius: 100%;
+    margin-bottom: 1vh;
+  }
+  .chupCnt img{
+    width: 7vh;
+  }
+  .sheepPlace {
+    border: 0.3vw solid var(--lightgrey);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
+    background-image: url(../img/textures/floor.png);
+    background-size: cover;
+    margin: 0;
+  }
+  .sheepPlace img {
+    width: 10vh;
   }
   /*Кнопки*/
   button {
@@ -245,7 +281,7 @@ a {
     }
     #changeLangBtn {
       position: absolute;
-      right: 4vw;
+      right: 5vw;
       bottom: 2vh;
     }
 
@@ -279,6 +315,8 @@ a {
   }
   .startMenu-content {
     position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    border-radius: 3%;
   }
   .rules-content p {
     font-family: "DudkaBold";

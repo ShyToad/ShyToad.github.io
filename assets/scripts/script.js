@@ -17,11 +17,9 @@ menuBtn.onclick = function() {
 }
 
 const rulBtn = document.getElementById('rulBtn');
-const rulBtn2 = document.getElementById('rulBtn2');
 const rules = document.getElementById('rules');
 
 rulBtn.addEventListener("click", rulOpen);
-rulBtn2.addEventListener("click", rulOpen);
 
 function rulOpen() {
     rules.style.display = "grid";
