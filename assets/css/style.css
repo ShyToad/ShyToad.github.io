@@ -55,11 +55,11 @@
           border-top: 2px solid white;
           font-size: 1.5vh;
         }
-        .startMenu {
+        .startMenu, #modalFirstTime {
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(9, 1fr);
         }
-        .startMenu-content {
+        .startMenu-content, #modalFirstTime-content{
             grid-column-start: 3;
             grid-column-end: span 2;
             grid-row-start: 4;
@@ -71,7 +71,7 @@
         grid-row-start: 1;
         grid-row-end: span 3;
         }
-        .rules, .info {
+        .rules, .info, #modalFirstTime {
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(6, 1fr);
         }
@@ -80,6 +80,14 @@
             grid-column-end: span 4;
             grid-row-start: 2;
             grid-row-end: span 4;
+        }
+        #modalFirstTime-content {
+            grid-column-start: 3;
+            grid-column-end: span 2;
+            grid-row-start: 3;
+            grid-row-end: span 3;
+
+            border-radius: 3%;
         }
         #navBtn {
             display: none;
@@ -118,11 +126,11 @@
           border-top: none;
           border-left: 2px solid white;
         }
-        .startMenu {
+        .startMenu, #modalFirstTime {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(7, 1fr);
         }
-        .startMenu-content {
+        .startMenu-content, #modalFirstTime-content {
             grid-column-start: 1;
             grid-column-end: span 2;
             grid-row-start: 3;
@@ -144,6 +152,12 @@
             grid-row-start: 2;
             grid-row-end: span 4;
         }
+        #modalFirstTime-content {
+          grid-column-start: 1;
+          grid-column-end: span 2;
+          grid-row-start: 2;
+          grid-row-end: span 3;
+      }
         .nav ul {
             grid-column: 7;
         }
@@ -204,6 +218,7 @@ a {
 .map {
     background-image: url("../img/textures/grass.jpg");
     background-size: cover;
+    display: grid;
 }
 .nav ul{
     display: flex;
@@ -260,6 +275,19 @@ a {
   .sheepPlace img {
     width: 10vh;
   }
+/*Games*/
+.box {
+  width: 200px;
+  background-color: red;
+  margin-right: 200px;
+  border: 2px solid black;
+}
+.item {
+  background-color: #445F3B;
+  height: inherit;
+  cursor: grab;
+}
+
   /*Кнопки*/
   button {
     background: none;
@@ -268,25 +296,40 @@ a {
    font-size: inherit;
    text-transform: inherit;
   }
-    .closeBtn {
-        position: absolute;
-        right: 21vw;
-        top: 21vh;
-    }
-
-    #infoBtn {
-        position: absolute;
-        bottom: 2vh;
-        right: 2vh;
-    }
-    #changeLangBtn {
+  .closeBtn {
       position: absolute;
-      right: 5vw;
+      right: 21vw;
+      top: 21vh;
+  }
+
+  #infoBtn {
+      position: absolute;
       bottom: 2vh;
-    }
+      right: 2vh;
+  }
+  #changeLangBtn {
+    position: absolute;
+    right: 5vw;
+    bottom: 2vh;
+  }
+  #confirmNameBtn {
+    padding: 1vh;
+    margin-top: 2vh;
+    border-radius: 3%;
+  }
+  #confirmNameBtn:hover {
+    background-color: var(--lightgrey);
+    color: var(--brownC);
+    animation: spring 300ms ease-out;
+    text-shadow: 0 -1px 3px var(--brownC);
+    font-weight: bold;
+  }
+  #confirmNameBtn:active {
+    transform: translateY(4px);
+  }
 
 /* Модальные окна*/
-.startMenu, .rules, .info {
+.startMenu, .rules, .info, #modalFirstTime {
     position: fixed; 
     left: 0;
     top: 0;
@@ -299,13 +342,13 @@ a {
     background: url(../img/textures/grass.jpg);
     background-size: cover;
   }
-  .rules, .info {
+  .rules, .info, #modalFirstTime{
     display: none;
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.7);
     word-wrap:break-word;
   }
-  .startMenu-content, .rules-content, .info-content {
+  .startMenu-content, .rules-content, .info-content, #modalFirstTime-content {
     background-color: var(--brownC);
     border: 20px double var(--lightgrey);
     padding: 4vh;
@@ -383,4 +426,38 @@ list-style: none;
   }
 .info ul img {
     width: 4vh;
+}
+#modalFirstTime-content *{
+  padding: 0.7vw;
+}
+#modalFirstTime-content{
+  font-size: 2vh;
+}
+#modalFirstTime-content h1{
+  text-align: center;
+}
+#modalFirstTime-content input{
+  background-color: var(--brownC);
+  color: var(--lightgrey);
+  border: none;
+  padding: 0.5vw;
+  font-size: 2vh;
+}
+#modalFirstTime-content input:active{
+  background-color: var(--brownC);
+  color: var(--lightgrey);
+  border: none;
+  padding: 0.5vw;
+}
+.visitCard {
+  display: none;
+  background-color: var(--brownC);
+  border: 8px double var(--lightgrey);
+  border-radius: 3%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+
+  padding: 2vw;
+  position: absolute;
+  left: 75vw;
+  bottom: 80vh;
 }

@@ -13,10 +13,27 @@
     <script src="./assets/scripts/changeLang.js" defer></script>
 </head>
 <body>
+    <div id="modalFirstTime">
+        <div id="modalFirstTime-content">
+            <h1>Пламенный привет!</h1>
+            <p>Кажется, ты здесь впервые. Представься, пожалуйста.
+                <br><br>
+            </p>
+            <label for="">Меня зовут
+                <input type="text" id="usersName" placeholder="Александра">
+            </label>
+            
+            <button id="confirmNameBtn">Приятно познакомиться!</button>
+        </div>
+    </div>
     <div class="startMenu" id="startMenu">
         <div class="startMenu-title">
             <img src="assets/img/ico/ico.png" class="ico" alt="">
             <h1>CGoS</h1>
+        </div>
+        <div class="visitCard" id="visitCard">
+            <p>Добро пожаловать, <strong id="nameU"></strong></p>
+            <button>Изменить имя</button>
         </div>
         <button id="infoBtn"><img src="./assets/img/ico/info.png" width="30" alt=""></button>
         <button id="changeLangBtn" value="ru"><img src="./assets/img/ico/ru.png" alt="RU" id="icoL" width="30"></button>
@@ -70,7 +87,9 @@
                 <span><img src="assets/img/ico/ico.png" alt=""></span>
             </div>
             <div class="sheepCnt">
-                
+                <label for="">
+                    <input type="number" disabled>
+                </label>
             </div>
             <div id="navv" class="nav">
                 <ul>
@@ -79,7 +98,18 @@
             </div>
         </div>
         <div class="map">
-
+            <div class="box">
+                <div class="item"></div>
+            </div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
         </div>
     </div>
 </div>

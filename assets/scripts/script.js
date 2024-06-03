@@ -42,3 +42,41 @@ const closeInfoBtn = document.getElementById('closeInfoBtn');
 closeInfoBtn.onclick = function() {
     info.style.display = "none";
 }
+const isVisited = localStorage.getItem('visited');
+const modalFirstTime = document.getElementById('modalFirstTime');
+
+if (!isVisited) {
+modalFirstTime.style.display = "grid";
+console.log('Привет!')
+localStorage.setItem('visited', true);
+}
+
+let usersName = document.getElementById('usersName');
+const confirmNameBtn = document.getElementById('confirmNameBtn');
+const savedName = localStorage.getItem('savedName');
+const nameU = document.getElementById('nameU');
+const visC = document.getElementById('visitCard');
+
+confirmNameBtn.onclick = function() {
+    if(usersName.value === '') {
+    alert('Введите имя!');
+    } else {
+        localStorage.setItem('savedName', usersName.value);
+        nameU.append(document.getElementById('usersName').value) ;
+        modalFirstTime.style.display = "none";
+        visC.style.display = "grid";
+    }
+}
+
+//Game
+const boxes = document.querySelector('.box');
+const item = document.querySelector('.item');
+
+boxes.array.forEach(box => {
+    box.addEventListener('dragover', (e) => {
+        e.preventDefault()
+    })
+    box.addEventListener('drop', () => {
+        box.appendChild(item);
+    })
+});
