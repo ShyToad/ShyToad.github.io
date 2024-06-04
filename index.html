@@ -72,7 +72,7 @@
         </div>
       </div>
     <div class="main" id="main">
-    <div class="container game">
+    <div class="game">
         <div class="menu">
             <div class="chupCnt">
                 <ul>
@@ -87,9 +87,11 @@
                 <span><img src="assets/img/ico/ico.png" alt=""></span>
             </div>
             <div class="sheepCnt">
-                <label for="">
-                    <input type="number" disabled>
-                </label>
+                <label for="sheepherdCnt">Игрок</label>
+                    <input id="sheepherdCnt" type="number" value="15" disabled>
+                    <br>
+                <label for="chupacCnt">Пк</label>
+                    <input id="chupacCnt" type="number" value="15" disabled>
             </div>
             <div id="navv" class="nav">
                 <ul>
@@ -98,18 +100,36 @@
             </div>
         </div>
         <div class="map">
-            <div class="box">
-                <div class="item"></div>
+            <div class="container">
+                <section class="box">
+                    <ul class="places">
+                        <li class="place col1 row2"></li>
+                        <li class="place col1 row4"></li>
+                        <li class="place col1 row6">3</li>
+                        <li class="place col2 row1"></li>
+                        <li class="place col2 row3"></li>
+                        <li class="place col2 row5">6</li>
+                        <li class="place col2 row7"></li>
+                        <li class="place col3 row2"></li>
+                        <li class="place col3 row4"></li>
+                        <li class="place col3 row6"></li> 
+                        <li class="place col4 row1"></li>
+                        <li class="place col4 row3">2</li>
+                        <li class="place col4 row5">3</li>
+                        <li class="place col4 row7"></li>
+                        <li class="place col5 row2"></li>
+                        <li class="place col5 row4">6</li>
+                        <li class="place col5 row6"></li>
+                        <li class="place col6 row1"></li>
+                        <li class="place col6 row3"></li>
+                        <li class="place col6 row5"></li> 
+                        <li class="place col6 row7">3</li>
+                        <li class="place col7 row2"></li>
+                        <li class="place col7 row4"></li>
+                        <li class="place col7 row6">6</li>
+                    </ul>
+                </section>
             </div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
         </div>
     </div>
 </div>

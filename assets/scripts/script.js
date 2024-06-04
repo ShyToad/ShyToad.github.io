@@ -69,14 +69,37 @@ confirmNameBtn.onclick = function() {
 }
 
 //Game
-const boxes = document.querySelector('.box');
-const item = document.querySelector('.item');
+const places = document.querySelector(`.places`);
+const place = places.querySelectorAll(`.place`);
+for(const onePlace of place) {
+    onePlace.draggable = true;
+}
+places.addEventListener(`dragstart`, (evt) => {
+    evt.target.classList.add(`selected`);
+})
+places.addEventListener(`dragend`, (evt) => {
+    evt.target.classList.remove(`selected`);
+})
+const getNextPlace = (cursorPosition, currPlace) => {
+const currPlaceCoord = currPlace.getBoundingClientRect();
+const currPlaceCenter = currPlaceCoord.y + currPlaceCoord.height / 2;
 
-boxes.array.forEach(box => {
-    box.addEventListener('dragover', (e) => {
-        e.preventDefault()
-    })
-    box.addEventListener('drop', () => {
-        box.appendChild(item);
-    })
+    const nextPlace = (cursorPosition < currPlaceCenter) ? currPlace : currPlace.nextElementSibling;
+
+    return nextPlace;
+};
+
+places.addEventListener(`dragover`, (evt) => {
+    evt.preventDefault();
+
+    const activePlace = places.querySelector(`.selected`);
+    const currPlace = evt.target;
+    const isMove = activePlace !== currPlace && currPlace.classList.contains(`place`);
+    if(!isMove) return;
+
+    const nextPlace = getNextPlace(evt.clientY, currPlace);
+
+    if(nextPlace && activePlace === nextPlace.previousElementSibling || activePlace === nextPlace) return;
+
+    places.insertBefore(activePlace, nextPlace);
 });
